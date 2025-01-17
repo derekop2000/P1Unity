@@ -8,7 +8,7 @@ public class JenkinsBuildScript
     public static void PerformBuild()
     {
         string[] scenes = { "Assets/Scenes/MainScene.unity" };
-        string path = "Builds/Windows/P1.exe";
+        string path = System.Environment.GetEnvironmentVariable("WORKSPACE") + "/Builds/Windows/P1.exe";
 
         BuildPipeline.BuildPlayer(scenes, path, BuildTarget.StandaloneWindows, BuildOptions.None);
     }
